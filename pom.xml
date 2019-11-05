@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.22.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>validate</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>validate</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<pentaho.version>8.3.0.2-479</pentaho.version>
+		<!--異常時要上去確認版本號碼 https://public.nexus.pentaho.org/#browse/search=keyword%3Dpentaho-platform:a1f3edd8e1b06cfa7c15dc1dbcbfaaa0 -->
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>pentaho</groupId>
+			<artifactId>pentaho-platform-extensions</artifactId>
+			<version>${pentaho.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>pentaho</groupId>
+			<artifactId>pentaho-platform-api</artifactId>
+			<version>${pentaho.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>pentaho</groupId>
+			<artifactId>pentaho-platform-core</artifactId>
+			<version>${pentaho.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>pentaho</groupId>
+			<artifactId>pentaho-platform-repository</artifactId>
+			<version>${pentaho.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>pentaho</groupId>
+			<artifactId>pentaho-platform-scheduler</artifactId>
+			<version>${pentaho.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>5.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>pentaho-repo</id>
+			<name>pentaho-repo</name>
+			<url>https://public.nexus.pentaho.org/content/groups/omni/</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<repositories>
+		<repository>
+			<id>pentaho-repo</id>
+			<name>pentaho-repo</name>
+			<url>https://public.nexus.pentaho.org/content/groups/omni/</url>
+		</repository>
+	</repositories>
+
+</project>
